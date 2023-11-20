@@ -4,21 +4,21 @@ import { globalContextReducer } from "../reducers";
 import { types } from "../contants";
 
 export const initialState = {
-  theme: "",
+  theme: 'light',
   data: [],
 };
 
 export const GlobalContext = createContext();
 
-export const ContextProvider = ({ children }) => {
+export const GlobalContextProvider = ({ children }) => {
   const [state, dispatch] = useReducer(globalContextReducer, initialState);
 
   const darken = () => {
-    dispatch({ type: types.DARK_THEME });
+    dispatch({ type: types.darkTheme });
   };
 
   const lighten = () => {
-    dispatch({ type: types.LIGHT_THEME });
+    dispatch({ type: types.lightTheme });
   };
 
   return (

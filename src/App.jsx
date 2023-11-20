@@ -1,14 +1,23 @@
-
-import Footer from "./Components/Footer";
-import Navbar from "./Components/Navbar";
-
+import { Suspense } from "react";
+import { Route, Routes } from "react-router-dom";
+import BasicLayout from "./layouts/BasicLayout";
+import { routes } from "./routes";
 
 function App() {
   return (
-      <div className="App">
-          <Navbar/>
-          <Footer/>
-      </div>
+    <Suspense fallback={<div>Cargando...</div>}>
+      <Routes>
+        <Route path="/" element={<BasicLayout />}>
+          {routes.map((route) => (
+            <Route
+              key={route.path}
+              path={route.path}
+              element={<route.element />}
+            />
+          ))}
+        </Route>
+      </Routes>
+    </Suspense>
   );
 }
 

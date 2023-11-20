@@ -1,15 +1,18 @@
 import React, { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Moon, Sun } from "../assets";
 import { GlobalContext } from "../contexts/GlobalContext";
 
 const Navbar = () => {
+  const navigate = useNavigate();
   const { theme, darken, lighten } = useContext(GlobalContext);
   const toggleTheme = () => (theme === "light" ? darken() : lighten());
 
   return (
-    <nav className={theme === "dark" && "dark-mode"}>
-      <h1 className="logo">Pearly White Hub</h1>
+    <nav className={theme === "dark" ? "dark-mode" : ""}>
+      <h1 className="logo" role="button" onClick={() => navigate("/")}>
+        🦷 Pearly White Hub
+      </h1>
       <div className="nav-items">
         <ul className="nav-links">
           <li className="nav-link">

@@ -1,12 +1,15 @@
-import React from 'react'
+import React from "react";
+import { useContext } from "react";
+import { GlobalContext } from "../contexts/GlobalContext";
 
 const Footer = () => {
+  const { theme } = useContext(GlobalContext);
   return (
-    <footer>
-        <p>Powered by</p>
-        <img src="./img/DH.png" alt='DH-logo' />
+    <footer className={theme === "dark" ? "dark-mode" : ""}>
+      <p>Made with 💙 by efedi</p>
+      <p>Frontend III final project at Digital House</p>
     </footer>
-  )
-}
+  );
+};
 
-export default Footer
+export default Footer;

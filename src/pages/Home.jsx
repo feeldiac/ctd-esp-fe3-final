@@ -5,9 +5,9 @@ import { GlobalContext } from "../contexts/GlobalContext";
 //Este componente debera ser estilado como "dark" o "light" dependiendo del theme del Context
 
 const Home = () => {
-  const { theme } = useContext(GlobalContext);
+  const { theme, data } = useContext(GlobalContext);
   
-  console.log(theme);
+  console.log(theme, data);
 
   return (
     <main className="">

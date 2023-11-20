@@ -3,6 +3,7 @@ import { createContext } from "react";
 import { globalContextReducer } from "../reducers";
 import { types } from "../contants";
 import { useGetDentists } from "../hooks";
+import { useMemo } from "react";
 
 export const initialState = {
   theme: "light",
@@ -13,6 +14,8 @@ export const GlobalContext = createContext();
 
 export const GlobalContextProvider = ({ children }) => {
   const { data } = useGetDentists();
+  const memoizedData = useMemo(() => data, [data]);
+
   const [state, dispatch] = useReducer(globalContextReducer, initialState);
   
   const darken = () => {
@@ -27,7 +30,7 @@ export const GlobalContextProvider = ({ children }) => {
     <GlobalContext.Provider
       value={{
         theme: state.theme,
-        data,
+        data: memoizedData,
         darken,
         lighten,
       }}

@@ -9,7 +9,7 @@ const Navbar = () => {
   const toggleTheme = () => (theme === "light" ? darken() : lighten());
 
   return (
-    <nav className={theme === "dark" ? "dark-mode" : ""}>
+    <nav>
       <h1 className="logo" role="button" onClick={() => navigate("/")}>
         🦷 Pearly White Hub
       </h1>
@@ -31,10 +31,6 @@ const Navbar = () => {
           ) : (
             <Sun fill="white" />
           )}
-          {/* <img
-            src={theme === "light" ? iconSun : iconMoon}
-            alt="toggle-theme"
-          /> */}
         </span>
       </div>
     </nav>

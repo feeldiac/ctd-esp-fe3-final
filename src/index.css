@@ -14,12 +14,15 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
 .favButton {
   background-color: rgba(136, 136, 136, 0.116);
   padding: 10px;
   border: none;
   width: 100%;
   cursor: pointer;
+  border-radius: 4px;
+  font-weight: 600;
 }
 
 h1 {
@@ -35,12 +38,8 @@ nav {
   background-color: navajowhite;
 }
 
-nav.dark-mode {
-  background-color: black;
-  color: white;
-}
-
-.nav-items, .nav-links {
+.nav-items,
+.nav-links {
   display: flex;
   align-items: center;
   gap: 1rem;
@@ -65,10 +64,6 @@ a:hover {
   text-decoration-color: palevioletred;
 }
 
-.dark-mode a {
-  color: white;
-}
-
 .theme-button {
   cursor: pointer;
 }
@@ -83,19 +78,19 @@ Footer styles
 
 footer {
   display: flex;
-  flex-direction: column; 
+  flex-direction: column;
   align-items: center;
   gap: 1rem;
   justify-content: center;
   text-align: center;
   padding: 2rem;
-  margin-top: 2rem;
   color: black;
   background-color: navajowhite;
   font-weight: 600;
 }
 
-footer.dark-mode {
+.dark-mode footer,
+.dark-mode nav {
   background-color: black;
   color: white;
 }
@@ -122,9 +117,11 @@ Card styles
   justify-content: space-around;
   flex-direction: column;
   align-items: center;
+  gap: 0.75rem;
   width: 200px;
-  padding: 0.5rem 0.5rem 0 0.5rem;
+  padding: 0.55rem;
   border: 0.5px solid rgb(136, 136, 136);
+  border-radius: 4px;
 }
 
 .card:hover {
@@ -139,8 +136,33 @@ Card styles
   height: auto;
   flex-wrap: wrap;
   margin: 0 auto;
+  padding-block-end: 2.5rem;
 }
 
+.card .name {
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.dark-mode .card .name,
+.dark-mode .card .city,
+.dark-mode .main .title,
+.dark-mode .favButton,
+.dark-mode a {
+  color: white;
+}
+
+.card .username {
+  color: rgb(136, 136, 136);
+  text-align: center;
+  font-size: 0.8rem;
+}
+
+.card .city {
+  color: darkslategrey;
+  text-align: center;
+  font-size: 0.8rem;
+}
 /* 
 
 Table styles
@@ -166,4 +188,21 @@ th {
 
 tr:nth-child(even) {
   background-color: #dddddd;
+}
+
+/* Home */
+
+.main {
+  background-color: #ffffff;
+}
+
+.dark-mode .main {
+  background-color: #28231d;
+}
+
+.main .title {
+  font-weight: bold;
+  font-size: 2.25rem;
+  padding-block-start: 0.83em;
+  padding-block-end: 0.83em;
 }

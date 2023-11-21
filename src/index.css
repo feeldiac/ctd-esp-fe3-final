@@ -95,15 +95,6 @@ footer {
   color: white;
 }
 
-form {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  width: 300px;
-  height: 100px;
-  margin: 0 auto;
-}
-
 /* 
 
 Card styles
@@ -147,7 +138,10 @@ Card styles
 .dark-mode .card .name,
 .dark-mode .card .city,
 .dark-mode .main .title,
+.dark-mode .main .subtitle,
 .dark-mode .favButton,
+/* .dark-mode .submit-button, */
+.dark-mode label,
 .dark-mode a {
   color: white;
 }
@@ -205,4 +199,66 @@ tr:nth-child(even) {
   font-size: 2.25rem;
   padding-block-start: 0.83em;
   padding-block-end: 0.83em;
+  text-align: center;
+}
+
+.main .subtitle {
+  font-weight: 600;
+  font-size: 1.25rem;
+  text-align: center;
+}
+
+/* Form */
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  gap: 1.85rem;
+  width: 300px;
+  margin: 0 auto;
+  padding: 1rem;
+  padding-block: 2.5rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+label {
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.submit-button {
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 0.9rem;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%;
+  background-color: rgb(206, 217, 142);
+  color: black;
+  margin-block-start: 1rem;
+}
+
+.errors {
+  color: red;
+  font-size: 0.8rem;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 0.5rem;
 }

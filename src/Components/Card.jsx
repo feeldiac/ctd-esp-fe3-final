@@ -1,12 +1,28 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useNavigate } from "react-router-dom";
+import { GlobalContext } from "../contexts/GlobalContext";
 
 const DEFAULT_IMAGE = "https://cdn-icons-png.flaticon.com/512/149/149071.png";
 const Card = ({ name, username, city, id }) => {
   const navigate = useNavigate();
+  const { favorites, addFavorite, removeFavorite } = useContext(GlobalContext);
+
+  const isFavorite = (dentist) => {
+    return favorites.some((item) => item.id === dentist.id);
+  };
+
+  const toggleFavorite = (dentist) => {
+    isFavorite(dentist) ? removeFavorite(dentist) : addFavorite(dentist);
+  };
 
   const handleFavorite = () => {
-    // Aqui iria la logica para agregar la Card en el localStorage
+    const dentist = { name, username, city, id };
+    alert(
+      `Dentist ${dentist.name} has been ${
+        isFavorite(dentist) ? "removed" : "added"
+      } to favorites!`
+    )
+    toggleFavorite(dentist);
   };
 
   return (

@@ -10,11 +10,6 @@ const globalContextReducer = (state, action) => {
                 ...state,
                 theme: 'light',
             }
-        case 'SET_DENTISTS':
-            return {
-                ...state,
-                data: action.payload
-            }
         default:
             throw new Error(`Unhandled action type: ${action.type}`);
     }

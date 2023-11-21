@@ -262,3 +262,18 @@ label {
   flex-direction: column;
   gap: 0.5rem;
 }
+
+/* Detail */
+
+.detail-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin: 0 auto;
+  padding-block-end: 2.5rem;
+  font-size: 1.75rem;
+} 
+
+em {
+  font-style: italic;
+}
